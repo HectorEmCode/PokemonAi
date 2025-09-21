@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPA Vite - Clasificador de Animales a Pokémon</title>
+
+    <!-- Tailwind CDN (modo prototipo, rápido para Vite + Vanilla) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Configuración de Tailwind para tema personalizado
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              neon: "#39FF14",
+              dark: "#0b0f10",
+              ink: "#111827",
+              steel: "#1f2937",
+              soft: "#9ca3af",
+            },
+            boxShadow: {
+              glow: "0 0 20px rgba(57,255,20,0.25)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="/src/assets/style.css" />
+  </head>
+  <body class="bg-gradient-to-b from-dark to-ink text-gray-100 min-h-screen">
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
