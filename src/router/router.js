@@ -1,7 +1,7 @@
 const routes = {
   "/": () => import("../pages/inicio.js"),
   "/favorites": () => import("../pages/Favorites.js"),
-  "/all-pokemons": () => import("../pages/AllPokemons.js"), // Nueva página
+  "/all-pokemons": () => import("../pages/AllPokemons.js"),
 };
 
 export function getCurrentRoute() {
@@ -45,4 +45,4 @@ export function navigateTo(path) {
   window.dispatchEvent(new HashChangeEvent("hashchange"));
 }
 
-export default navigateTo();
+export default navigateTo;
