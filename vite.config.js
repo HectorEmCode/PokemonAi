@@ -1,4 +1,5 @@
 import { defineConfig } from "vite";
+import path from "path";
 
 export default defineConfig({
   optimizeDeps: {
@@ -8,19 +9,24 @@ export default defineConfig({
       "@tensorflow/tfjs-backend-webgl",
       "@tensorflow-models/mobilenet",
     ],
-    exclude: [], // No excluye nada para asegurar bundling correcto
+    exclude: [],
   },
   define: {
-    global: "globalThis", // TF.js necesita 'global' en browser
+    global: "globalThis",
   },
   build: {
     rollupOptions: {
-      external: [], // Incluye todo en el bundle
+      external: [],
     },
   },
   server: {
     fs: {
-      strict: false, // Permite acceso a node_modules si es necesario
+      strict: false,
+    },
+  },
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
     },
   },
 });
